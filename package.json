@@ -31,6 +31,7 @@
     "bootstrap": "^4.0.0-beta.2",
     "font-awesome": "4.7.0",
     "gulp-clean-css": "3.9.0",
+    "gulp-serve": "^1.4.0",
     "gulp-header": "1.8.9",
     "gulp-live-server": "0.0.31",
     "gulp-rename": "^1.2.2",
@@ -43,8 +44,5 @@
     "build": "gulp",
     "start": "gulp serve"
   },
-  "main": "gulpfile.js",
-  "devDependencies": {
-    "gulp-serve": "^1.4.0"
-  }
+  "main": "gulpfile.js"
 }
