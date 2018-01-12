@@ -26,6 +26,8 @@
     "url": "git+https://github.com/BlackrockDigital/startbootstrap-agency.git"
   },
   "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
     "bootstrap": "^4.0.0-beta.2",
     "font-awesome": "4.7.0",
     "gulp-clean-css": "3.9.0",
@@ -38,11 +40,11 @@
     "jquery.easing": "^1.4.1"
   },
   "scripts": {
+    "build": "gulp",
     "start": "gulp serve"
   },
   "main": "gulpfile.js",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1"
+    "gulp-serve": "^1.4.0"
   }
 }

@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
 var gls = require('gulp-live-server');
 var browserSync = require('browser-sync').create();
+var serve = require('gulp-serve');
 
 
 // Set the banner content
@@ -118,10 +119,20 @@ gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() 
     console.log('hello'); // the task does not need to do anything.
 });*/
 
-gulp.task('serveprod', function() {
+/*gulp.task('serveprod', function() {
   connect.server({
     root: "",
     port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
 });
+*/
+
+gulp.task('serve', serve('public'));
+gulp.task('serve-build', serve(['public', 'build']));
+gulp.task('serve-prod', serve({
+  root: ['public', 'build'],
+  port: 8080 || process.env.PORT,
+  middleware: function(req, res) {
+  }
+}));
