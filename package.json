@@ -41,8 +41,8 @@
     "jquery.easing": "^1.4.1"
   },
   "scripts": {
-    "build": "gulp",
-    "start": "gulp serve"
+    "start": "node gulpfile.js",
+    "postinstall": "bower install && gulp build-libs && gulp build"
   },
   "main": "gulpfile.js"
 }
