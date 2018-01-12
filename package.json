@@ -3,6 +3,9 @@
   "name": "startbootstrap-agency",
   "version": "4.0.0-beta.2",
   "description": "Agency is a one page HTML theme for Bootstrap.",
+  "engines": {
+    "node": "9.3.0"
+  },
   "keywords": [
     "css",
     "sass",
@@ -44,5 +47,6 @@
     "start": "gulp serve",
     "postinstall": "bower install && gulp build-libs && gulp build"
   },
-  "main": "gulpfile.js"
+  "main": "gulpfile.js",
+  "devDependencies": {}
 }
