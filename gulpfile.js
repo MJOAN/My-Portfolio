@@ -92,13 +92,26 @@ gulp.task('copy', function() {
 })
 
 // Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'browserServe']);
+
+
+// Configure the browserServe task
+gulp.task('browserServe', function() {
+  browserSync.init({
+    port: process.env.PORT || 8080,  // use *different* port than above
+    notify: false,
+    open: false,
+    server: {
+      baseDir: './'
+    }
+  });
+});
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: ''
+      baseDir: './'
     },
   })
 })
