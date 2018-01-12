@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp serve"
+    "start": "gulp"
   },
   "main": "gulpfile.js",
   "devDependencies": {
