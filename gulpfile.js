@@ -6,9 +6,6 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
-var gls = require('gulp-live-server');
-
-
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -77,6 +74,9 @@ gulp.task('copy', function() {
   gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
     .pipe(gulp.dest('vendor/jquery'))
 
+  gulp.src(['node_modules/popper.js/dist/umd/popper.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
+    .pipe(gulp.dest('vendor/popper'))
+
   gulp.src(['node_modules/jquery.easing/*.js'])
     .pipe(gulp.dest('vendor/jquery-easing'))
 
@@ -94,13 +94,12 @@ gulp.task('copy', function() {
 // Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
 
-
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
       baseDir: ''
-    }
+    },
   })
 })
 
