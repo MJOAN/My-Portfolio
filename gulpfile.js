@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
+var browserServe = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
-var gls = require('gulp-live-server');
+//var serve = require('gulp-serve');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -92,24 +92,27 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+// Default task // default is part of configuration default starting server
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'browserServe']);
 
 // Configure the browserSync task
-gulp.task('browserSync', function() {
+gulp.task('browserServe', function() {
   browserSync.init({
+    notify: false,
+    open: false,
+    port: process.env.port || 8080,
     server: {
       baseDir: "./"
     },
   })
 })
 
-
+/*
 gulp.task('serve', function() {
   //1. serve with default settings
   var server = gls.static(); //equals to gls.static('public', 3000);
   server.start();
-});
+});*/
 
 
 // Dev task with browserSync
