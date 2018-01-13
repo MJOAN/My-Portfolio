@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var browserServe = require('browser-sync').create();
+var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
@@ -93,11 +93,11 @@ gulp.task('copy', function() {
 })
 
 // Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'browserServe']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'browserSync']);
 
 
 // Configure the browserSync task
-gulp.task('browserServe', function() {
+gulp.task('browserSync', function() {
   browserSync.init({
     notify: false,
     open: false,
