@@ -92,8 +92,9 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Default task // default is part of configuration default starting server
+// Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy', 'browserServe']);
+
 
 // Configure the browserSync task
 gulp.task('browserServe', function() {
@@ -102,7 +103,7 @@ gulp.task('browserServe', function() {
     open: false,
     port: process.env.port || 8080,
     server: {
-      baseDir: "./"
+      baseDir: './'
     },
   })
 })
@@ -113,7 +114,6 @@ gulp.task('serve', function() {
   var server = gls.static(); //equals to gls.static('public', 3000);
   server.start();
 });*/
-
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
