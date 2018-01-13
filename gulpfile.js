@@ -6,6 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var gls = require('gulp-live-server');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -115,6 +116,14 @@ gulp.task('browserSync', function() {
     },
   })
 })
+
+
+gulp.task('serve', function() {
+  //1. serve with default settings
+  var server = gls.static(); //equals to gls.static('public', 3000);
+  server.start();
+});
+
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
