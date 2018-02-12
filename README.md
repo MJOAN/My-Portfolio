@@ -4,7 +4,7 @@ This is my portfolio and represents a culmination of all projects I've built as 
 ## Portfolio Screenshots!
 ![Agency Bootstrap Portfolio One Page Screenshot](portfolio1.png)
 ![Agency Bootstrap Portfolio One Page Screenshot](screenshot2.png)
-![Agency Bootstrap Portfolio One Page Screenshot](portfolio3.png)
+![Agency Bootstrap Portfolio One Page Screenshot](screenshot3.png)
 ![Agency Bootstrap Portfolio One Page Screenshot](portfolio4.png)
 
 ## Information about the [Start Bootstrap](http://startbootstrap.com/) Agency template for my portfolio! 
